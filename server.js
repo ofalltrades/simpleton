@@ -34,7 +34,7 @@ const REMOVE_ONE_ELEMENT = 1,
 
 const html_template = (collection, record_id = null) => {
   const path = record_id ? `./views/${collection}/show.html` : `./views/${collection}/index.html`
-  return eval_template.eval('index.html', path)
+  return eval_template.inject('index.html', path)
 }
 
 const accepts = ({ headers: { accept } }, type) => accept.includes(`text/${type}`)
